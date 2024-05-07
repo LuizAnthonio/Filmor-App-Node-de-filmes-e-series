@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const colle = "fluxo-de-caixa";
 
 const series = new Schema({
 
