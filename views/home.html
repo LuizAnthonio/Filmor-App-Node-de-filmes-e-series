@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title><%= titulo %> <%= temp %> : <%= ep %></title>
+  
+</head>
+
+<body>
+
+    
+    
+   
+
+            
+            
+            <div class="tela" id="tela">
+                <div class="header" id="header">
+                    <a  class="btn-3" href="/series/listar" ><</a>
+                    <h1 class="title-2"><%= titulo %></h1>
+                    <h3 class="sub-title-2">Temporada: <%= temp %> | <%= episodios[ep-1].ep %></h3>
+                    
+                </div>
+                <button class="btn-pular" id="btn-pular" style="display: none;"></button>
+                <video class="video" src="/<%= ver %>" type="video/mp4" poster="/<%= imgBg %>" id="video"></video>
+                
+                <div id="player-container" class="player-container">
+                    <div class="player" id="player">
+                        <button class="btn-play-1" id="btn-play-1" ></button>
+                        <div class="opcoes-2">
+                            <label >
+
+
+
+                                <% if(antes > 0 ){ %>
+                                    <a  class="btn-2" href="<%= link %><%= antes %>" ><</a>
+                                    
+                                <% }else{ %>
+                                    <p></p>
+                                <% } %>
+
+                            </label>
+
+
+
+
+                            <label >
+
+                                <% if(ep < qtd){ %>
+                                    <a class="btn-2" href="<%= link %><%= ep %>" >></a>
+                                <% }else{ %>
+                                    <p></p>
+                                <% } %>
+                            </label>
+                            
+                        </div>
+                        <div class="barra">
+                            <p id="duration-inicial">0:00</p>
+
+                            <input type="range"  id="barra-time" min="0" max="100" step="0.1" value="0">
+                          
+                            <p id="duration-fim">0:00</p>
+                            
+                        </div>
+    
+                        <div class="volume">
+                            <input type="range" name="volume" class="input-volume Nativo" id="input-volume"  min="0" max="1" step="0.1" value="1">
+                            <label id="ico-volume" class="ico-volume"></label>
+                        </div>
+    
+                        <label id="botaoFullscreen" class="tela-cheia"></label>
+    
+                    </div>
+
+                </div>
+
+                <div id="abertura" style="display: none;"><%= abertura %></div>
+                <div id="tempoAbe" style="display: none;"><%= tempo %></div>
+
+                
+            </div>
+
+            
+            
+       
+        
+
+    
+
+<script src="/script.js">
+
+
+
+</script>
+    
+</body>
+</html>

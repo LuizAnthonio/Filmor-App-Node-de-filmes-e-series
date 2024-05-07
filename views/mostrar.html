@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title></title>
+</head>
+<body>
+
+
+    <div class="container">
+
+        <h1><%= nome %></h1>
+
+      
+            
+            <div class="container-single">
+    
+                <% for(let i = 0; i < epsQtd; i++){ %>
+
+                <div class="card" onclick="clicou('<%= link %><%= i %>')">
+                    <img src="/<%= imgCapa %>" >
+                    <p class="title-p"><%= episodios[i] %></p>
+    
+                </div>
+    
+                <% } %>
+    
+            </div>
+        
+
+
+    </div>
+
+    
+
+    <script>
+        function clicou(e){
+            window.location.href = "http://localhost:8000"+e
+        }
+    </script>
+    
+</body>
+</html>
